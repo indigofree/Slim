@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<link rel="stylesheet" href="./style/bootstrap3/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./style/bootstrap3/css/bootstrap-theme.min.css" />
+	<script src="./style/bootstrap3/js/jquery.min.js"></script>
+	<script src="./style/bootstrap3/js/bootstrap.min.js"></script>
+	<title>this is slim view</title>
+
+	<style>
+			#myModal .modal-body{
+				height: 300px;
+			}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p></p>
+		<div class='row col-lg-8 col-lg-offset-2'>
+			<form class="form-inline" role="form">
+			  <div class="form-group col-xs-8">
+			    <input type="text" class="form-control" id="content" placeholder="please enter the city name">
+			  </div>
+			  <button type="submit" class="btn btn-info">query</button>
+			   <button type='button' class='btn btn-success' data-toggle="modal" data-target="#myModal-add"><i class="glyphicon glyphicon-plus"></i><strong>add</strong></button>
+			</form>
+			<p></p>
+			<table class="table table-bordered table-hover">
+				<tr>
+				<td>ID</td>
+				<td>City</td>
+				<td>Post Code</td>
+				<td>Initial</td>
+				<td>Operation</td>
+				</tr>				
+			</table>
+		 </div>
+
+		<!-- Modal update-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			  <h4 class="modal-title" id="myModalLabel">City Information</h4>
+			</div> 
+		      <div class="modal-body">
+		        <div>
+					<form class="form-horizontal" role="form">
+					  <div class="form-group">
+					    <label for="city" class="col-sm-3 control-label">City：</label>
+					    <input type="hidden" class="form-control" id="cityid" name="cityID">
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="city" name="cityName">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="zipCode" class="col-sm-3 control-label">PostCode:</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="zipCode" name="zipCode">
+					    </div>
+					  </div>					 
+					<div class="form-group">
+					    <label for="letter" class="col-sm-3 control-label">Initial</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="letter" name="letter">
+					    </div>
+					  </div>
+					  <!--<div class="form-group">
+					    <label for="abbr" class="col-sm-2 control-label">缩写：</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="abbr" name="abbr">
+					    </div>
+					  </div>-->
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-5">
+					      <button type="button" class="btn btn-default btn-update">Update</button>
+					    </div>
+					  </div>
+					</form>
+		        </div>
+		      </div>
+		    <!-- <div class="modal-footer">
+		      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      <button type="button" class="btn btn-primary">Save changes</button>
+		    </div> -->
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+				<!-- Modal add-->
+		<div class="modal fade" id="myModal-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			  <h4 class="modal-title" id="myModalLabel">City Information</h4>
+			</div> 
+		      <div class="modal-body">
+		        <div>
+					<form class="form-horizontal" role="form">
+					  <div class="form-group">
+					    <label for="city" class="col-sm-3 control-label">City：</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="city-add" name="cityName">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="zipCode" class="col-sm-3 control-label">Post Code：</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="zipCode-add" name="zipCode">
+					    </div>
+					  </div>					 
+					<div class="form-group">
+					    <label for="letter" class="col-sm-3 control-label">Initial：</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="letter-add" name="letter">
+					    </div>
+					  </div>
+					 <!-- <div class="form-group">
+					    <label for="abbr" class="col-sm-2 control-label">缩写：</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="abbr-add" name="abbr">
+					    </div>
+					  </div>-->
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-5">
+					      <button type="button" class="btn btn-default btn-add">Add</button>
+					    </div>
+					  </div>
+					</form>
+		        </div>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+	 </div>
+</body>
+	
+	<script>
+		$(document).ready(function(){
+			//服务器支持重写的,可以把index.php隐藏,就可以使用下面url
+			//var url='http://localhost/test/slim/api';
+//			var url='http://localhost/Slim/api/index.php';
+			var url='http://localhost:81/testSlim/api/index.php';
+			showInfo();
+
+			function showInfo(){
+				$.ajax({
+					url:url,
+					contentType:'application/json',
+					type:'get',
+					dataType:'json',
+					success:function(data){	
+						$.each(data,function(index,val){
+							$('.table').append('<tr><td>'+val.CityID+'</td><td>'
+									+val.CityName+'</td><td>'+val.ZipCode+'</td><td>'+
+									val.letter+'</td>'+'<td>' +
+									'<div class="btn-group btn-group-sm">' +
+									'<button type="button" class="btn btn-warning btn-modify" info="'+val.CityID+'|'+
+									val.CityName+'|'+val.ZipCode+'|'+val.letter+'|'+'" ' +
+									'data-toggle="modal" data-target="#myModal">' +
+									'<i class="glyphicon glyphicon-edit"></i></button> ' +
+									'<button type="button" class="btn btn-danger btn-delete" CityID='+val.CityID+'>' +
+									'<i class="glyphicon glyphicon-remove"></i></button></div></td></tr>');
+						});
+					}
+
+				});
+			}
+			//click the modify button
+			//点击修改按钮事件,动态显示城市信息
+			$('.table').delegate('.btn-modify',"click",function(){
+				var info=$(this).attr('info');
+				var arr=info.split("|");
+				$('#cityid').prop({'value':arr[0],'placeholder':arr[0]});
+				$('#city').prop({'value':arr[1],'placeholder':arr[1]});
+				$('#zipCode').prop({'value':arr[2],'placeholder':arr[2]});
+				$('#letter').prop({'value':arr[3],'placeholder':arr[3]});
+				//$('#abbr').prop({'value':arr[4],'placeholder':arr[4]});
+			});
+
+			//delete
+			//删除
+			$('.table').delegate('.btn-delete','click',function(){
+				var id=$(this).attr('CityID');
+				$.ajax({
+					url:url+"/"+id,
+					type:'delete',
+					success:function(data){
+						alert("delete success");
+						window.location.reload();
+					},
+					error:function(jqXHR,textStatus,errorThrown){
+						alert(errorThrown);
+						window.location.reload();
+					}
+				});
+			});
+
+			//add
+			$('.btn-add').click(function(){
+				$.ajax({
+					url:url,
+					type:"post",
+					dataType:"JSON",
+					data:{"CityName":$("#city-add").val(),"ZipCode":$("#zipCode-add").val(),"letter":$("#letter-add").val()},
+					success:function(data){
+						alert("add success");
+						window.location.reload();
+					},
+					error:function(jqXHR,textStatus,errorThrown){
+						alert("sorry, add failure");
+						window.location.reload();
+					}
+				});
+			});
+
+			//update
+			//更新
+			$('.btn-update').click(function(){
+				var id=$('#cityid').val();
+				$.ajax({
+					url:url+"/"+id,
+					type:"put",
+					dataType:"JSON",
+					data:{"CityName":$("#city").val(),"ZipCode":$("#zipCode").val(),"letter":$("#letter").val()},
+					success:function(data){
+						alert('update success!');
+						window.location.reload();
+					},
+					error:function(jqXHR,textStatus,errorThrown){
+						alert("sorry, update failure!");
+						
+					}
+				});
+			});
+
+			//query
+			//查询
+			$(".btn-info").click(function(){
+				$(".btn-add").prop("class",'hidden');
+				var search=$("#content").val();
+				$.ajax({
+					url:url+"/"+search,
+					type:"get",
+					dataType:"json",
+					success:function(data){
+						$("#myModal-add").on("shown.bs.modal",function(){
+							$("#city-add").prop('value',data[0].CityName);
+							$("#zipCode-add").prop('value',data[0].ZipCode);
+							$("#letter-add").prop('value',data[0].letter);
+//							$("#abbr-add").prop('value',data[0].abbr);
+						});	
+						$("#myModal-add").modal('show');
+					}
+				});				
+				return false;
+			});
+			
+		});
+
+
+	</script>
+</html>
